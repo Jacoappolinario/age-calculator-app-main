@@ -1,6 +1,17 @@
+:root {
+  --color-1: #ffffff;
+  --color-2: #151515;
+  --color-3: #716f6f;
+  --color-4: #f0f0f0;
+  --color-5: #dcdcdc;
+  --color-6: #854dff;
+
+  --font-family: "Poppins", sans-serif;
+}
+
 body {
-  background: #f0f0f0;
-  font-family: "Poppins", sans-serif;
+  background: var(--color-4);
+  font-family: var(--font-family);
   margin: 0px;
   height: 100vh;
   display: flex;
@@ -14,8 +25,8 @@ ul {
   list-style: none;
 }
 
-.age-calculator-content {
-  background: #ffffff;
+.content {
+  background: var(--color-1);
   width: 840px;
   height: 651px;
   padding: 3.5rem;
@@ -23,59 +34,60 @@ ul {
   box-sizing: border-box;
 }
 
-.form-inputs {
+.form .inputs {
   display: flex;
   gap: 2rem;
 }
 
-.form-inputs label {
+.form .inputs label {
   display: block;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.21875rem;
   text-transform: uppercase;
-  color: #716f6f;
+  color: var(--color-3);
   margin-bottom: 0.5rem;
 }
 
-.form-inputs input {
+.form .inputs input {
   padding: 0.75rem 1.5rem;
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--color-5);
   border-radius: 0.5rem;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.02rem;
-  color: #151515;
+  color: var(--color-2);
   max-width: 160px;
   box-sizing: border-box;
 }
 
-.form-inputs input:hover {
-  border-color: #854dff;
+.form .inputs input:hover {
+  border-color: var(--color-6);
 }
 
-.form-inputs input:focus {
-  outline-color: #854dff;
+.form .inputs input:focus {
+  outline: none;
+  border: 1px solid var(--color-6);
 }
 
-.form-button {
-  display: flex;
-  align-items: center;
+.form .button {
+  padding-top: 2.97rem;
+  padding-bottom: 2.97rem;
+  position: relative;
 }
 
-.form-button::before {
+.form .button::before {
   content: "";
-  display: inline-block;
+  display: block;
   width: 100%;
   height: 1px;
-  background-color: #dcdcdc;
-  flex: 1;
+  background-color: var(--color-5);
 }
 
-.form-button button {
+.form .button button {
   width: 96px;
   height: 96px;
-  background-color: #854dff;
+  background-color: var(--color-6);
   background-image: url("../images/icon-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -83,21 +95,24 @@ ul {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
-.form-button button:hover {
-  background-color: #151515;
+.form .button button:hover {
+  background-color: var(--color-2);
 }
 
-.form-results li {
+.results li {
   font-size: 6.5rem;
   font-style: italic;
   font-weight: 800;
   line-height: 110%;
   letter-spacing: -0.13rem;
-  color: #151515;
+  color: var(--color-2);
 }
 
-.form-results span {
-  color: #854dff;
+.results span {
+  color: var(--color-6);
 }

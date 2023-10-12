@@ -5,7 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
   <title>Frontend Mentor | Age calculator app</title>
+  <meta name="description" content="Age calculator app">
+
+  <link rel="preload" href="./css/style.css" as="style">
   <link rel="stylesheet" href="./css/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,30 +18,29 @@
 </head>
 
 <body>
-  <main class="age-calculator-content">
+  <main class="content">
     <form class="form">
-      <div class="form-inputs">
+      <div class="inputs">
         <div>
           <label for="day">day</label>
-          <input type="text" id="day" name="name" placeholder="DD">
+          <input type="number" id="day" name="name" placeholder="DD">
         </div>
         <div>
           <label for="month">month</label>
-          <input type="text" id="month" name="month" placeholder="MM">
+          <input type="number" id="month" name="month" placeholder="MM">
         </div>
         <div>
           <label for="year">year</label>
-          <input type="text" id="year" name="year" placeholder="YYYY">
+          <input type="number" id="year" name="year" placeholder="YYYY">
         </div>
       </div>
 
-      <div class="form-button">
-        <button></button>
+      <div class="button">
+        <button aria-label="button"></button>
       </div>
-
     </form>
 
-    <ul class="form-results">
+    <ul class="results">
       <li><span>38</span> years</li>
       <li><span>3</span> months</li>
       <li><span>26</span> days</li>
