@@ -32,6 +32,15 @@ ul {
   padding: 3.5rem;
   border-radius: 24px 24px 200px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .form .inputs {
@@ -57,7 +66,7 @@ ul {
   font-weight: 700;
   letter-spacing: 0.02rem;
   color: var(--color-2);
-  max-width: 160px;
+  width: 160px;
   box-sizing: border-box;
 }
 
@@ -96,7 +105,8 @@ ul {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 0px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0px;
 }
 
@@ -115,4 +125,49 @@ ul {
 
 .results span {
   color: var(--color-6);
+}
+
+@media (max-width: 375px) {
+  .content {
+    width: 343px;
+    height: 486px;
+    padding: 3rem 1.5rem;
+    border-radius: 24px 24px 100px;
+  }
+
+  .form .inputs {
+    gap: 1rem;
+  }
+
+  .form .inputs label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1875rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .form .inputs input {
+    padding: 0.75rem 1rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.0125rem;
+    width: 88px;
+  }
+
+  .form .button {
+    padding-top: 1.97rem;
+    padding-bottom: 1.97rem;
+  }
+
+  .form .button button {
+    width: 64px;
+    height: 64px;
+    background-size: 24px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: initial;
+  }
+
+  .results li {
+    font-size: 3.5rem;
+    letter-spacing: -0.07rem;
+  }
 }
