@@ -34,13 +34,11 @@ ul {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .form .inputs {
@@ -133,6 +131,11 @@ ul {
     height: 486px;
     padding: 3rem 1.5rem;
     border-radius: 24px 24px 100px;
+    gap: 2rem;
+  }
+
+  .form {
+    gap: 2rem;
   }
 
   .form .inputs {
