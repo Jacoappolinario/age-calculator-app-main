@@ -5,6 +5,7 @@
   --color-4: #f0f0f0;
   --color-5: #dcdcdc;
   --color-6: #854dff;
+  --color-7: #ff5959;
 
   --font-family: "Poppins", sans-serif;
 }
@@ -41,12 +42,12 @@ ul {
   flex-direction: column;
 }
 
-.form .inputs {
+.form .fields {
   display: flex;
   gap: 2rem;
 }
 
-.form .inputs label {
+.form .fields label {
   display: block;
   font-size: 0.875rem;
   font-weight: 700;
@@ -56,7 +57,7 @@ ul {
   margin-bottom: 0.5rem;
 }
 
-.form .inputs input {
+.form .fields input {
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--color-5);
   border-radius: 0.5rem;
@@ -66,15 +67,34 @@ ul {
   color: var(--color-2);
   width: 160px;
   box-sizing: border-box;
+  margin-bottom: 0.5rem;
 }
 
-.form .inputs input:hover {
+.form .fields input:hover {
   border-color: var(--color-6);
 }
 
-.form .inputs input:focus {
+.form .fields input:focus {
   outline: none;
   border: 1px solid var(--color-6);
+}
+
+.form .fields input.invalid {
+  border-color: var(--color-7);
+}
+
+.error-message {
+  display: none;
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-7);
+}
+
+#error-message-day.visible,
+#error-message-month.visible,
+#error-message-year.visible {
+  display: block;
 }
 
 .form .button {
@@ -138,17 +158,17 @@ ul {
     gap: 2rem;
   }
 
-  .form .inputs {
+  .form .fields {
     gap: 1rem;
   }
 
-  .form .inputs label {
+  .form .fields label {
     font-size: 0.75rem;
     letter-spacing: 0.1875rem;
     margin-bottom: 0.25rem;
   }
 
-  .form .inputs input {
+  .form .fields input {
     padding: 0.75rem 1rem;
     font-size: 1.25rem;
     letter-spacing: 0.0125rem;

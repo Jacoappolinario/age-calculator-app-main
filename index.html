@@ -9,10 +9,10 @@
   <title>Frontend Mentor | Age calculator app</title>
   <meta name="description" content="Age calculator app">
 
-  <link rel="preload" href="./css/style.min.css" as="style">
-  <link rel="stylesheet" href="./css/style.min.css">
+  <!-- <link rel="preload" href="./css/style.min.css" as="style"> -->
+  <!-- <link rel="stylesheet" href="./css/style.min.css"> -->
   <!-- Dev -->
-  <!-- <link rel="stylesheet" href="./css/style.css"> -->
+  <link rel="stylesheet" href="./css/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,32 +22,39 @@
 <body>
   <main class="content">
     <form class="form">
-      <div class="inputs">
-        <div>
+      <div class="fields">
+        <div class="item">
           <label for="day">day</label>
-          <input type="number" id="day" name="name" placeholder="DD">
+          <input type="number" id="day" name="day" placeholder="DD">
+          <span id="error-message-day" class="error-message"></span>
         </div>
-        <div>
+        <div class="item">
           <label for="month">month</label>
           <input type="number" id="month" name="month" placeholder="MM">
+          <span id="error-message-month" class="error-message"></span>
         </div>
-        <div>
+        <div class="item">
           <label for="year">year</label>
           <input type="number" id="year" name="year" placeholder="YYYY">
+          <span id="error-message-year" class="error-message"></span>
         </div>
       </div>
 
       <div class="button">
         <button aria-label="button"></button>
       </div>
+
+      <div class="error-message-form"></div>
     </form>
 
     <ul class="results">
-      <li><span>38</span> years</li>
-      <li><span>3</span> months</li>
-      <li><span>26</span> days</li>
+      <li><span id="yearsResult">--</span> years</li>
+      <li><span id="monthsResult">--</span> months</li>
+      <li><span id="daysResult">--</span> days</li>
     </ul>
   </main>
+
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
