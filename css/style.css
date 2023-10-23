@@ -175,6 +175,10 @@ ul {
     width: 88px;
   }
 
+  .error-message {
+    font-size: 0.45rem;
+  }
+
   .form .button {
     padding-top: 1.97rem;
     padding-bottom: 1.97rem;
