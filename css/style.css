@@ -1,6 +1,18 @@
+:root {
+  --color-1: #ffffff;
+  --color-2: #151515;
+  --color-3: #716f6f;
+  --color-4: #f0f0f0;
+  --color-5: #dcdcdc;
+  --color-6: #854dff;
+  --color-7: #ff5959;
+
+  --font-family: "Poppins", sans-serif;
+}
+
 body {
-  background: #f0f0f0;
-  font-family: "Poppins", sans-serif;
+  background: var(--color-4);
+  font-family: var(--font-family);
   margin: 0px;
   height: 100vh;
   display: flex;
@@ -14,68 +26,95 @@ ul {
   list-style: none;
 }
 
-.age-calculator-content {
-  background: #ffffff;
+.content {
+  background: var(--color-1);
   width: 840px;
   height: 651px;
   padding: 3.5rem;
   border-radius: 24px 24px 200px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
-.form-inputs {
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .fields {
   display: flex;
   gap: 2rem;
 }
 
-.form-inputs label {
+.form .fields label {
   display: block;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.21875rem;
   text-transform: uppercase;
-  color: #716f6f;
+  color: var(--color-3);
   margin-bottom: 0.5rem;
 }
 
-.form-inputs input {
+.form .fields input {
   padding: 0.75rem 1.5rem;
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--color-5);
   border-radius: 0.5rem;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.02rem;
-  color: #151515;
-  max-width: 160px;
+  color: var(--color-2);
+  width: 160px;
   box-sizing: border-box;
+  margin-bottom: 0.5rem;
 }
 
-.form-inputs input:hover {
-  border-color: #854dff;
+.form .fields input:hover {
+  border-color: var(--color-6);
 }
 
-.form-inputs input:focus {
-  outline-color: #854dff;
+.form .fields input:focus {
+  outline: none;
+  border: 1px solid var(--color-6);
 }
 
-.form-button {
-  display: flex;
-  align-items: center;
+.form .fields input.invalid {
+  border-color: var(--color-7);
 }
 
-.form-button::before {
+.error-message {
+  display: none;
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-7);
+}
+
+#error-message-day.visible,
+#error-message-month.visible,
+#error-message-year.visible {
+  display: block;
+}
+
+.form .button {
+  padding-top: 2.97rem;
+  padding-bottom: 2.97rem;
+  position: relative;
+}
+
+.form .button::before {
   content: "";
-  display: inline-block;
+  display: block;
   width: 100%;
   height: 1px;
-  background-color: #dcdcdc;
-  flex: 1;
+  background-color: var(--color-5);
 }
 
-.form-button button {
+.form .button button {
   width: 96px;
   height: 96px;
-  background-color: #854dff;
+  background-color: var(--color-6);
   background-image: url("../images/icon-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -83,21 +122,79 @@ ul {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0px;
 }
 
-.form-button button:hover {
-  background-color: #151515;
+.form .button button:hover {
+  background-color: var(--color-2);
 }
 
-.form-results li {
+.results li {
   font-size: 6.5rem;
   font-style: italic;
   font-weight: 800;
   line-height: 110%;
   letter-spacing: -0.13rem;
-  color: #151515;
+  color: var(--color-2);
 }
 
-.form-results span {
-  color: #854dff;
+.results span {
+  color: var(--color-6);
+}
+
+@media (max-width: 800px) {
+  .content {
+    width: 343px;
+    height: 486px;
+    padding: 3rem 1.5rem;
+    border-radius: 24px 24px 100px;
+    gap: 2rem;
+  }
+
+  .form {
+    gap: 2rem;
+  }
+
+  .form .fields {
+    gap: 1rem;
+  }
+
+  .form .fields label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1875rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .form .fields input {
+    padding: 0.75rem 1rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.0125rem;
+    width: 88px;
+  }
+
+  .error-message {
+    font-size: 0.45rem;
+  }
+
+  .form .button {
+    padding-top: 1.97rem;
+    padding-bottom: 1.97rem;
+  }
+
+  .form .button button {
+    width: 64px;
+    height: 64px;
+    background-size: 24px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: initial;
+  }
+
+  .results li {
+    font-size: 3.5rem;
+    letter-spacing: -0.07rem;
+  }
 }
