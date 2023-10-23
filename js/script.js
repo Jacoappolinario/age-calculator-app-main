@@ -70,7 +70,7 @@ form.addEventListener("submit", (event) => {
 });
 
 function isFieldEmpty(value) {
-  return value === "";
+  return value === "" || isNaN(value);
 }
 
 function isValidDay(day, month, year) {
