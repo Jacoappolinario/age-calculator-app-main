@@ -1,4 +1,5 @@
 // TODO: Passar as mensagens para o inglês
+// TODO: Adicionar animação nos números
 
 class AgeCalculator {
   constructor() {
