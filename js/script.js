@@ -1,6 +1,3 @@
-// TODO: Passar as mensagens para o inglês
-// TODO: Adicionar animação nos números
-
 class AgeCalculator {
   constructor() {
     this.form = document.querySelector(".form");
@@ -32,7 +29,7 @@ class AgeCalculator {
 
   validateInput(value, { min, max, errorMessage }) {
     if (!value.trim()) {
-      return { isValid: false, error: "Este campo é obrigatório" };
+      return { isValid: false, error: "This field is required" };
     }
 
     const numValue = parseInt(value);
@@ -48,17 +45,17 @@ class AgeCalculator {
       day: {
         min: 1,
         max: 31,
-        errorMessage: "Dia Inválido",
+        errorMessage: "Must be a valid day",
       },
       month: {
         min: 1,
         max: 12,
-        errorMessage: "Mês Inválido",
+        errorMessage: "Must be a valid month",
       },
       year: {
         min: 1,
         max: new Date().getFullYear(),
-        errorMessage: "Ano deve estar no passado",
+        errorMessage: "Must be in the past",
       },
     };
 
@@ -80,7 +77,7 @@ class AgeCalculator {
     if (isValid) {
       const date = this.getInputDate();
       if (!this.isValidDate(date)) {
-        this.showError(this.inputs.day, "Data Inválida");
+        this.showError(this.inputs.day, "Must be a valid date");
         return false;
       }
     }
@@ -130,16 +127,15 @@ class AgeCalculator {
     let months = today.getMonth() - birthDate.getMonth();
     let days = today.getDate() - birthDate.getDate();
 
-    // Ajustes necessários quando o dia/mês atual é menor que o de nascimento
-    if (months < 0 || (months === 0 && days < 0)) {
-      years--;
-      months += 12;
+    if (days < 0) {
+      const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+      days += previousMonth.getDate();
+      months--;
     }
 
-    if (days < 0) {
-      const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 0);
-      days += lastMonth.getDate();
-      months--;
+    if (months < 0) {
+      years--;
+      months += 12;
     }
 
     this.updateResults({ years, months, days });
